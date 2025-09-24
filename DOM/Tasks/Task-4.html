@@ -1,0 +1,15 @@
+<!--
+    How can I make it so that when a user clicks a button, the text from that button is shown in the h1 tag located above it?
+-->
+
+<h1 id="display">Name</h1>
+<button onclick ="show(event)">Tom</button>
+<button onclick ="show(event)">Jerry</button>
+<button onclick ="show(event)">Jack</button>
+
+<script>
+    var h1 =document.getElementById("display");
+    function show(event){
+        h1.textContent = event.target.textContent;
+    }
+</script>

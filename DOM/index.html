@@ -1,0 +1,74 @@
+<!-- DOM Manipulation -->
+
+<!--Click button and change the text content-->
+
+
+<p id="one">
+Hello World
+</p>
+
+<script>
+    var para=document.getElementById("one")
+    console.log(para.textContent)
+    para.textContent = "Bye!!"
+</script>
+
+<h1 id="title">
+    Hello world!
+</h1>
+<button onclick="change()">Change</button>
+<script>
+    var a = document.getElementById("title")
+    console.log(a.textContent)
+    function change(){
+        a.textContent = "Bye World"
+    }
+</script>
+
+
+<!--Add two entered num when add button is clicked-->
+
+<input id="num1"> 
+</input>
+<input id="num2"></input>
+<p id="result">Result </p>
+<button onclick="add()">Add</button>
+
+<script>
+ function add(){
+    var n1 = document.getElementById("num1").value;
+    var n2 = document.getElementById("num2").value;
+    console.log(n1)
+    console.log(n2)
+    var res = parseInt(n1) + parseInt(n2);
+    document.getElementById("result").textContent = res;
+    console.log(res)
+ }
+</script>
+
+<!--Guess the Number-->
+
+<h1>Guess the number from 1 to 10</h1>
+<input id="guess"></input>
+<button onclick="check()">Check</button>
+<p id="result">Your are Right/Wrong</p>
+<p id="score">Score:10</p>
+<script>
+        var guessNumber = document.getElementById("guess");
+        var res = document.getElementById("result");
+        var randomNumber = Math.floor(Math.random()*10)+1;
+        var score = document.getElementById("score");
+        var yourScore =10;
+        function check(){
+            var enteredNumber = guessNumber.value;
+            if(randomNumber==enteredNumber){
+                res.textContent = "You are Right!";
+                alert("You Won")
+            }
+            else{
+                yourScore = yourScore -1
+                score.textContent = "Score: "+yourScore;
+                res.textContent = "You are Wrong!";
+            }
+        }
+</script>

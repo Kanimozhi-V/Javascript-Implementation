@@ -1,0 +1,23 @@
+<!--DOM Style Manipulation-->
+<!--Change the button color to red and width to 500px when button is click-->
+
+<style>
+    div{
+        background-color: black;
+        height: 100px;
+        width: 100px;
+        transition: 2s;
+    }
+    .widthMax{
+        width: 500px;
+    }
+</style>
+<div id="box"></div>
+<button onclick="change()">Change color</button>
+<script>
+    var box=document.getElementById("box");
+    function change(){
+        box.style.backgroundColor="red";
+        box.setAttribute("class","widthMax");
+    }
+</script>

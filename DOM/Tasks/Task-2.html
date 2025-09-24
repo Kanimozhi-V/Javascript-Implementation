@@ -1,0 +1,23 @@
+<!--
+    How can you use JavaScript to accomplish the following task: When a user clicks a 'Hello' button, 
+    how do you dynamically create an `<h1>` element and add it to a specific `<div>` element with the `id` ' container' in the HTML document?
+    Eg:
+    Add Hello ->Button
+    Hello
+    Hello
+    Hello
+-->
+
+<button onclick="add()">Add Hello</button>
+<div id="container"> </div>
+<div id="result"></h1>
+<script>
+            var div = document.getElementById("result");
+
+    function add(){
+        var h1List= document.createElement("h1")
+        h1List.textContent="Hello"
+        div.append(h1List);
+    }
+
+</script>
