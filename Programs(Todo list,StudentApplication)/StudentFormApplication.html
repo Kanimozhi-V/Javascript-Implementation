@@ -1,0 +1,77 @@
+<center>
+    <form onsubmit="add(event)">
+        <h1>STUDENT FORM</h1>
+        <table border="1">
+            <tr >
+                <td>Name</td>
+                <td><input id="student-name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input id="age"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male" required>Male</input>
+                    <input type="radio" name="gender" value="Female">Female</input>
+                </td>    
+            </tr>
+            <tr>
+                <td>Course</td>
+                <td>
+                    <select id="course" style="width: 100%;">
+                        <option>Java</option>
+                        <option>Python</option>
+                        <option>JavaScript</option>
+                        <option>React</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit" style="background-color: aqua; width: 100%;">Save</button>   
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="1" id ="table-data">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </table>
+</center>
+<script>
+    var table = document.getElementById("table-data");
+    var stname = document.getElementById("student-name");
+    var age = document.getElementById("age");
+    var course = document.getElementById("course");
+    var email = document.getElementById("email");
+    function add(event){
+        var genderInput = document.querySelector('input[name="gender"]:checked');
+        event.preventDefault();
+        var tablerow = document.createElement("tr");
+        tablerow.innerHTML = `
+            <td>${stname.value}</td>
+            <td>${age.value}</td>
+            <td>${course.value}</td>
+            <td>${genderInput.value}</td>
+            <td>${email.value}</td>
+            <td><button onclick='deleteItem(event)'  style="background-color: red;">Delete</button></td>
+        `;
+        table.appendChild(tablerow)
+        event.target.reset();
+    }
+    function deleteItem(event){
+        event.target.parentElement.parentElement.remove();
+    }
+</script>

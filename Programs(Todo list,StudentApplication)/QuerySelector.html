@@ -1,0 +1,29 @@
+<div class="one">
+    <h1>Hello</h1>
+    <h1>World</h1>
+</div>
+<h1>Hi</h1>
+<h1 class="ok">One</h1>
+<h1 class="ok">Two</h1>
+<h1 class="ok">Three</h1>
+
+<script>
+    var div = document.querySelector(".one")  //Selecting by class(Give the first matched element)
+    console.log(div);
+    var h1 = document.querySelector("h1") //Selecting by tag name
+    console.log(h1);
+    var h1ok = document.querySelectorAll(".ok") //Selecting all by class name
+    for(count=0;count<h1ok.length;count++){
+        console.log(h1ok[count].textContent);
+    }
+    //Adding HTML Element
+    div.prepend("Welcome");
+    div.append("to JS");
+    var h2=document.createElement("h2");
+    h2.textContent="This is h2 tag ";
+    div.insertAdjacentElement("beforebegin",h2)
+    var p = document.createElement("p");
+    p.textContent="This is p tag ";
+    div.insertAdjacentElement("afterend",p)
+
+</script>
